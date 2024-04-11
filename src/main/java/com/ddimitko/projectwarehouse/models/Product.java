@@ -2,7 +2,6 @@ package com.ddimitko.projectwarehouse.models;
 
 import jakarta.persistence.*;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;

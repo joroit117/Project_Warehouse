@@ -62,6 +62,8 @@ public class MainController implements Initializable {
     @FXML
     private Button addUserButton;
     @FXML
+    private Button inquiryButton;
+    @FXML
     private Button logoutButton;
 
     public MainController() {
