@@ -1,4 +1,4 @@
-package com.ddimitko.projectwarehouse.spring;
+package com.ddimitko.projectwarehouse.utilities;
 
 import com.ddimitko.projectwarehouse.StartApp;
 import com.ddimitko.projectwarehouse.models.FXMLStages;

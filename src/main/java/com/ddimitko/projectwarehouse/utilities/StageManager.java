@@ -1,4 +1,4 @@
-package com.ddimitko.projectwarehouse.spring;
+package com.ddimitko.projectwarehouse.utilities;
 
 import com.ddimitko.projectwarehouse.models.FXMLStages;
 import javafx.application.Platform;
@@ -31,6 +31,7 @@ public class StageManager {
         this.primaryStage.setScene(scene);
         this.primaryStage.sizeToScene();
         this.primaryStage.centerOnScreen();
+        this.primaryStage.setResizable(false);
 
         try {
             this.primaryStage.show();

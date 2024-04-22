@@ -1,11 +1,10 @@
 package com.ddimitko.projectwarehouse.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Type;
+import org.springframework.format.annotation.NumberFormat;
 
 import java.io.Serializable;
 
@@ -20,5 +19,8 @@ public class Customer implements Serializable {
 
     private String firstName;
     private String lastName;
+
+    //Personal Identification Number (ЕГН)
+    private String PIN;
 
 }

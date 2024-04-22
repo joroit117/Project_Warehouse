@@ -1,6 +1,6 @@
 package com.ddimitko.projectwarehouse;
 
-import com.ddimitko.projectwarehouse.spring.StartConfig;
+import com.ddimitko.projectwarehouse.utilities.StartConfig;
 import javafx.application.Application;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

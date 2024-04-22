@@ -1,4 +1,4 @@
-package com.ddimitko.projectwarehouse.spring;
+package com.ddimitko.projectwarehouse.utilities;
 
 import java.io.PrintWriter;
 import java.io.Writer;

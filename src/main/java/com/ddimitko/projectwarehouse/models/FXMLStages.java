@@ -2,6 +2,7 @@ package com.ddimitko.projectwarehouse.models;
 
 import java.util.ResourceBundle;
 
+//Represents each of the stages and their respective FXML template
 public enum FXMLStages {
 
     MAIN {

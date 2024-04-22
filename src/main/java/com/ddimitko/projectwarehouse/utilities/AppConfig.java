@@ -1,4 +1,4 @@
-package com.ddimitko.projectwarehouse.spring;
+package com.ddimitko.projectwarehouse.utilities;
 
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,9 +1,9 @@
 package com.ddimitko.projectwarehouse.controllers;
 
 import com.ddimitko.projectwarehouse.models.*;
-import com.ddimitko.projectwarehouse.repositories.CashRegisterRepository;
 import com.ddimitko.projectwarehouse.services.UserService;
-import com.ddimitko.projectwarehouse.spring.StageManager;
+import com.ddimitko.projectwarehouse.services.WarehouseService;
+import com.ddimitko.projectwarehouse.utilities.StageManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -26,37 +26,24 @@ public class MainController implements Initializable {
     @Lazy
     private StageManager stageManager;
 
-    //This field makes sure only a single user is logged in at a time.
+    //This field ensures only a single user is logged in at a time.
     private UserHolder userHolder = UserHolder.getInstance();
     private User user;
+
+    //Get controller access to Warehouse
+    private Warehouse warehouse;
 
     //Database access
     @Autowired
     private UserService userService;
     @Autowired
-    private CashRegisterRepository cashRegRepo;
+    private WarehouseService warehouseService;
 
     //Labels
     @FXML
     private Label userName;
     @FXML
     private Label cashRegister;
-
-    //Tabs
-    @FXML
-    private Tab prodListTab;
-    @FXML
-    private Tab suppliersTab;
-    @FXML
-    private Tab customersTab;
-
-    //Tables
-    @FXML
-    private TableView prodListTable;
-    @FXML
-    private TableView suppliersTable;
-    @FXML
-    private TableView customersTable;
 
     //Buttons
     @FXML
@@ -72,8 +59,8 @@ public class MainController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.user = this.userHolder.getUser();
         this.userName.setText(this.user.getUsername());
-        CashRegister register = this.cashRegRepo.findById(1L).get();
-        this.cashRegister.setText(register.getValue().toString());
+        this.warehouse = this.warehouseService.initializeAtStartup();
+        this.cashRegister.setText(warehouse.getCashRegister().toString());
         if (this.user.getUserType() != UserType.Administrator) {
             this.addUserButton.setDisable(true);
         }
@@ -124,5 +111,4 @@ public class MainController implements Initializable {
             this.addUser(username.getText(), password.getText(), String.valueOf(typeSelection.getSelectionModel().getSelectedItem()));
         });
     }
-
 }

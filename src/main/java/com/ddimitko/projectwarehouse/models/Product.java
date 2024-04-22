@@ -23,6 +23,7 @@ public class Product implements Serializable {
     private Supplier supplier;
 
     private String name;
+
     private int quantity;
     private LocalDate entryDate;
 

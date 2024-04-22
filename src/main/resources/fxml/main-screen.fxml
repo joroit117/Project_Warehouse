@@ -14,9 +14,9 @@
    <children>
       <TabPane maxHeight="485.0" prefHeight="485.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" StackPane.alignment="BOTTOM_CENTER">
         <tabs>
-          <Tab fx:id="prodListTab" text="Product List">
+          <Tab fx:id="prodListTab" text="Products List">
                <content>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                  <!--<AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <TableView fx:id="prodListTable" layoutX="297.0" layoutY="38.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="25.0">
                           <columns>
@@ -26,34 +26,40 @@
                         </TableView>
                      </children>
                   </AnchorPane>
+                  -->
                </content>
             </Tab>
           <Tab fx:id="suppliersTab" text="Suppliers">
                <content>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                   <fx:include source="supplierTabContent.fxml"></fx:include>
+                  <!--><AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <TableView fx:id="suppliersTable" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="25.0">
                            <columns>
-                              <TableColumn prefWidth="75.0" text="C1" />
-                              <TableColumn prefWidth="75.0" text="C2" />
+                              <TableColumn prefWidth="679.0" text="Name" />
                            </columns>
                         </TableView>
                      </children>
                   </AnchorPane>
+                   -->
                </content>
             </Tab>
             <Tab fx:id="customersTab" text="Customers">
               <content>
+                  <fx:include source="customerTabContent.fxml"></fx:include>
+                  <!--
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <TableView fx:id="customersTable" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="25.0">
                            <columns>
-                              <TableColumn prefWidth="75.0" text="C1" />
-                              <TableColumn prefWidth="75.0" text="C2" />
+                              <TableColumn prefWidth="180.0" text="First Name" />
+                              <TableColumn minWidth="0.0" prefWidth="185.0" text="Last Name" />
+                              <TableColumn prefWidth="314.0" text="Personal Identification Number" />
                            </columns>
                         </TableView>
                      </children>
                   </AnchorPane>
+                  -->
               </content>
             </Tab>
         </tabs>

@@ -5,7 +5,7 @@ import com.ddimitko.projectwarehouse.models.User;
 import com.ddimitko.projectwarehouse.models.UserHolder;
 import com.ddimitko.projectwarehouse.models.UserType;
 import com.ddimitko.projectwarehouse.services.UserService;
-import com.ddimitko.projectwarehouse.spring.StageManager;
+import com.ddimitko.projectwarehouse.utilities.StageManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

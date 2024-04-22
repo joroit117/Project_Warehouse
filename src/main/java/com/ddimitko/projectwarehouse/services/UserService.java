@@ -1,7 +1,11 @@
 package com.ddimitko.projectwarehouse.services;
 
+import com.ddimitko.projectwarehouse.models.Customer;
+import com.ddimitko.projectwarehouse.models.Supplier;
 import com.ddimitko.projectwarehouse.models.User;
 import com.ddimitko.projectwarehouse.models.UserType;
+import com.ddimitko.projectwarehouse.repositories.CustomerRepository;
+import com.ddimitko.projectwarehouse.repositories.SupplierRepository;
 import com.ddimitko.projectwarehouse.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 import jakarta.transaction.Transactional;
@@ -23,6 +27,7 @@ public class UserService {
     public List<User> findAll() {
         return this.userRepo.findAll();
     }
+
 
     public User findByUsernameAndPassword(String username, String password) {
         return this.userRepo.findByUsernameAndPassword(username, password);
@@ -51,4 +56,5 @@ public class UserService {
         }
 
     }
+
 }
