@@ -3,6 +3,7 @@ package com.ddimitko.projectwarehouse.models;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.io.Serializable;
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@ToString
 public class Supplier implements Serializable {
 
     @Id

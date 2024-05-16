@@ -7,6 +7,7 @@ import com.ddimitko.projectwarehouse.models.UserType;
 import com.ddimitko.projectwarehouse.repositories.CustomerRepository;
 import com.ddimitko.projectwarehouse.repositories.SupplierRepository;
 import com.ddimitko.projectwarehouse.repositories.UserRepository;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import java.util.List;
 
 @Service
 @Transactional
+@Log4j2
 public class UserService {
 
     @Autowired
@@ -35,14 +37,24 @@ public class UserService {
 
     public User findByUsername(String username) {
         return this.userRepo.findByUsername(username);
+
     }
 
     public Boolean authenticate(String username, String password) {
         User user = this.userRepo.findByUsername(username);
         if (user == null) {
+            log.error("User not found.");
             return false;
         } else {
-            return password.equals(user.getPassword()) ? true : false;
+            if(password.equals(user.getPassword())) {
+                log.warn("Authenticating...");
+                return true;
+
+            }
+            else{
+                log.warn("Wrong password.");
+                return false;
+            }
         }
     }
 
@@ -53,6 +65,7 @@ public class UserService {
             user.setPassword(password);
             user.setUserType(UserType.valueOf(userType));
             this.userRepo.save(user);
+            log.warn("User added.");
         }
 
     }

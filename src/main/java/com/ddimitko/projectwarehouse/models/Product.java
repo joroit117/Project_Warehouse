@@ -31,6 +31,8 @@ public class Product implements Serializable {
     private Double listPrice;
     //доставна цена
     private Double retailPrice;
+    
+    private Boolean inWarehouse;
 
     public Product(){
     }

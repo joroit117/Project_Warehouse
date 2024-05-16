@@ -28,4 +28,8 @@ public class ProductService {
         return productRepo.findAllBySupplier(supplier);
     }
 
+    public List<Product> findAllByInWarehouseIsTrue(){
+        return productRepo.findAllByInWarehouseIsTrue();
+    }
+
 }
